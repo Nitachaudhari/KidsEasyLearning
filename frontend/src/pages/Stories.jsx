@@ -14,6 +14,7 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Stories = () => {
   const [stories, setStories] = useState([]);
@@ -24,7 +25,7 @@ const Stories = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/stories").then((res) => {
+    axios.get(`${apiUrl}/stories`).then((res) => {
       setStories(res.data);
       setFilteredStories(res.data);
 
@@ -198,7 +199,7 @@ const Stories = () => {
                   fallbackSrc="/api/placeholder/300/300"
                 /> */}
                 <Image
-  src={`http://localhost:5000${selectedStory.image}`}
+  src={`${apiUrl}${selectedStory.image}`}
   fallbackSrc="https://via.placeholder.com/300x200"
   alt={selectedStory.title}
 />
@@ -307,7 +308,7 @@ const Stories = () => {
                   >
                     <Box h="180px" bg="gray.100" mb={4} borderRadius="lg" overflow="hidden">
                       <Image
-                        src={`http://localhost:5000${story.image}`}
+                        src={`${apiUrl}${story.image}`}
                         alt={story.title}
                         w="full"
                         h="full"
