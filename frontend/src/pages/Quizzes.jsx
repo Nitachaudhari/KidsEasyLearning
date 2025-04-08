@@ -15,7 +15,6 @@ import {
   useColorModeValue,
   Badge
 } from "@chakra-ui/react";
-const apiURL = import.meta.env.VITE_API_BASE_URL;
 
 // Correct way to import keyframes
 import { keyframes } from "@emotion/react";
@@ -41,7 +40,7 @@ const Quizzes = () => {
   const bounceAnimation = `${bounce} 2s ease-in-out infinite`;
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/quizzes`)
+    fetch("http://localhost:5000/quizzes")
       .then(res => res.json())
       .then(data => setQuizzes(data))
       .catch(err => {
@@ -105,7 +104,7 @@ const Quizzes = () => {
 
   return (
     <Box  
-    // bgImage="url('/quizBackground.png')"
+    bgImage="url('/quizBackground.png')"
     bgSize="cover"
     bgPosition="center"
     bgRepeat="no-repeat"

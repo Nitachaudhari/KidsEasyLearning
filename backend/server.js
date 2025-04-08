@@ -14,6 +14,7 @@ mongoose.connect(process.env.MONGO_URI)
         .then(()=>console.log("Connected to MongoDB"))
         .catch((err)=>console.log(err))
 
+app.use(cors({ origin: "http://localhost:5173" }));
 
 
 app.get('/health',(req,res)=>{
