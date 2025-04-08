@@ -11,14 +11,17 @@ import {
   Image,
 } from "@chakra-ui/react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+  const navigate = useNavigate();
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", formData);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, formData);
       alert("Registration Successful");
+      navigate("/login");
       console.log(res.data);
     } catch (err) {
       alert("Registration Failed");
