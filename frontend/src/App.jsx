@@ -5,7 +5,6 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Stories from './pages/Stories'
 import Games from './pages/games/Games'
-import Puzzles from './pages/puzzles'
 import Quizzes from './pages/Quizzes'
 import Dashboard from './pages/Dashboard'
 import Register from './pages/Register'
@@ -45,7 +44,6 @@ function App() {
           <Route path='/games/shape-finder' element={<ShapeFinder />}/> 
           <Route path='/games/drawing-shapes' element={<DrawingShapes />}/> 
 
-          <Route path='/puzzles' element={<Puzzles />}/>
           <Route path='/quizzes' element={<Quizzes />}/>
           <Route path='/dashboard' element={<Dashboard />}/>
 
