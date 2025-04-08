@@ -14,8 +14,15 @@ mongoose.connect(process.env.MONGO_URI)
         .then(()=>console.log("Connected to MongoDB"))
         .catch((err)=>console.log(err))
 
-app.use(cors({ origin: "*" }));
-
+app.use(
+    cors({
+        origin: [
+            "http://localhost:5173",
+            "https://kidslearneasy.netlify.app"
+        ],
+        credentials: true
+        })
+);
 
 app.get('/health',(req,res)=>{
     res.send("Kids learning backend is running")
