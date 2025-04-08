@@ -104,7 +104,7 @@ const Quizzes = () => {
 
   return (
     <Box  
-    bgImage="url('/quizBackground.png')"
+    // bgImage="url('/quizBackground.png')"
     bgSize="cover"
     bgPosition="center"
     bgRepeat="no-repeat"
