@@ -199,7 +199,7 @@ const Stories = () => {
                   fallbackSrc="/api/placeholder/300/300"
                 /> */}
                 <Image
-  src={`${apiUrl}${selectedStory.image}`}
+  src={`${apiUrl}/stories/${selectedStory.image}`}
   fallbackSrc="https://via.placeholder.com/300x200"
   alt={selectedStory.title}
 />
